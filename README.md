@@ -1,3 +1,15 @@
+This is xHook ported to OpenHarmony (Linux kernel). To build on Windows, set up the necessary environment variables, and run `compile.bat`.
+
+The environment variables that need to be set up are:
+
+- `OHOS_SDK_HOME`, set this to C:\Users\\<user name\>\AppData\Local\Huawei\Sdk\openharmony\9
+- `OHOS_NDK_HOME`, set this to C:\Users\\<user name\>\AppData\Local\Huawei\Sdk\openharmony\9\native
+- Append these to `Path`:
+  - %OHOS_NDK_HOME%
+  - %OHOS_SDK_HOME%\toolchains
+  - %OHOS_NDK_HOME%\build\cmake
+  - %OHOS_NDK_HOME%\build-tools\cmake\bin
+
 <p align="center"><img src="https://github.com/iqiyi/xHook/blob/master/docs/xhooklogo.png?raw=true" alt="xhook" width="50%"></p>
 
 # xHook
