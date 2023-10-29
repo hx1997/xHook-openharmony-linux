@@ -1,0 +1,6 @@
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror -fvisibility=hidden -Wno-unused-command-line-argument")
+SET(LIB_SRC xhook.c xh_core.c xh_elf.c xh_log.c xh_util.c xh_version.c)
+ADD_LIBRARY(libxhook_shared STATIC ${LIB_SRC})
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/output)
+SET_TARGET_PROPERTIES(libxhook_shared PROPERTIES OUTPUT_NAME "xhook")
+TARGET_LINK_LIBRARIES(libxhook_shared PUBLIC libhilog_ndk.z.so)

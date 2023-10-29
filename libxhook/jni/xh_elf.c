@@ -845,17 +845,17 @@ int xh_elf_init(xh_elf_t *self, uintptr_t base_addr, const char *pathname)
         case DT_RELASZ:
             self->reldyn_sz = dyn->d_un.d_val;
             break;
-        case DT_ANDROID_REL:
-        case DT_ANDROID_RELA:
-            {
-                self->relandroid = (ElfW(Addr))(self->bias_addr + dyn->d_un.d_ptr);
-                if((ElfW(Addr))(self->relandroid) < self->base_addr) return XH_ERRNO_FORMAT;
-                break;
-            }
-        case DT_ANDROID_RELSZ:
-        case DT_ANDROID_RELASZ:
-            self->relandroid_sz = dyn->d_un.d_val;
-            break;
+        // case DT_ANDROID_REL:
+        // case DT_ANDROID_RELA:
+        //     {
+        //         self->relandroid = (ElfW(Addr))(self->bias_addr + dyn->d_un.d_ptr);
+        //         if((ElfW(Addr))(self->relandroid) < self->base_addr) return XH_ERRNO_FORMAT;
+        //         break;
+        //     }
+        // case DT_ANDROID_RELSZ:
+        // case DT_ANDROID_RELASZ:
+        //     self->relandroid_sz = dyn->d_un.d_val;
+        //     break;
         case DT_HASH:
             {
                 //ignore DT_HASH when ELF contains DT_GNU_HASH hash table

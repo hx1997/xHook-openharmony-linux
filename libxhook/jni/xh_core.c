@@ -21,6 +21,7 @@
 
 // Created by caikelun on 2018-04-11.
 
+#define _GNU_SOURCE 1
 #include <inttypes.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -31,6 +32,7 @@
 #include <regex.h>
 #include <setjmp.h>
 #include <errno.h>
+#include <signal.h>
 #include "queue.h"
 #include "tree.h"
 #include "xh_errno.h"
@@ -667,7 +669,7 @@ void xh_core_clear()
 
 void xh_core_enable_debug(int flag)
 {
-    xh_log_priority = (flag ? ANDROID_LOG_DEBUG : ANDROID_LOG_WARN);
+    xh_log_priority = (flag ? LOG_DEBUG : LOG_WARN);
 }
 
 void xh_core_enable_sigsegv_protection(int flag)
